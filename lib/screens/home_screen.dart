@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_movie_app/widget/movie_section.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -29,10 +30,10 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(),
+      drawer: const Drawer(),
       appBar: AppBar(
-        title: Text("Movies Streaming"),
-        actions: [
+        title: const Text("Movies Streaming"),
+        actions: const [
           Padding(padding: EdgeInsets.only(right: 15),
             child: Icon(Icons.search),
           )
@@ -89,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
               ),
             ],
           ),
-          SizedBox(height: 30),
+          const SizedBox(height: 30),
           TabBar(
            controller: _tabController,
            unselectedLabelColor: Colors.white.withOpacity(0.5),
@@ -99,17 +100,24 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
              borderRadius: BorderRadius.circular(10),
            ),
            labelStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.normal),
-           labelPadding: EdgeInsets.symmetric(horizontal: 20),
-           padding: EdgeInsets.only(left: 10),
-           tabs: [
+           labelPadding: const EdgeInsets.symmetric(horizontal: 20),
+           padding: const EdgeInsets.only(left: 10),
+           tabs: const [
              Tab(text: "All"),
              Tab(text: "Action"),
              Tab(text: "Adventure"),
              Tab(text: "Comedy"),
            ],
           ),
-          SizedBox(height: 20),
-          
+          const SizedBox(height: 20),
+          Center(
+            child: [
+              MovieSection(),
+              Container(),
+              Container(),
+              Container(),
+            ][_tabController.index],
+          ),
         ],
       ),
     );

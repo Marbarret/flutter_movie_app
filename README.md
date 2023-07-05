@@ -5,7 +5,7 @@ App for studying visual composition and using packages.
 - Android Studio version 17.0.6
 - Flutter version 3.10.5
 
-## 📚 Used Tools
+## 📚 Packages
 - Google Fonts version 5.1.0
 - Carousel Slider version 4.2.1
 - Flutter Rating Bar version 4.0.1
